@@ -3,6 +3,7 @@
 import afwf
 
 from .handlers import (
+    search,
     open_url,
     open_file,
     write_file,
@@ -14,6 +15,7 @@ from .handlers import (
 )
 
 wf = afwf.Workflow()
+wf.register(search.handler)
 wf.register(open_url.handler)
 wf.register(open_file.handler)
 wf.register(write_file.write_request_handler)
