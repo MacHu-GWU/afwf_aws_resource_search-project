@@ -23,6 +23,21 @@
 				<false/>
 			</dict>
 		</array>
+		<key>36E24633-6436-4173-BEE8-049C43484C43</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FEFE6551-5E67-4B8D-AFB9-60631F4C6419</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>76DC8B24-AA7F-46D1-9300-0BBFE2FFB4B9</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3D612075-778A-4380-9A57-7F68CD611C4B</key>
 		<array>
 			<dict>
@@ -55,6 +70,56 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AC763A34-8198-4C21-92AB-F42CD7BAB468</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>3202B106-1DAC-4F1C-A5D2-0F6E6FB6C13B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8986A44E-C1F2-4B4C-AA08-C7F9491097A7</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy ARN (Amazon Resource Name) of this Resource</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>36E24633-6436-4173-BEE8-049C43484C43</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Copy unique identifier of this Resource</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C556B277-2701-45FB-9FDB-FF73B24A1888</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy human friendly name of this Resource</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>427AF54F-215D-4B50-A8E0-756E0E5C3778</key>
 		<array>
@@ -76,6 +141,21 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>D800F848-747C-4DB0-98E8-CC31A9FA207C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>76DC8B24-AA7F-46D1-9300-0BBFE2FFB4B9</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8986A44E-C1F2-4B4C-AA08-C7F9491097A7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5CB669B4-2234-4625-BB06-991583C28B1E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -116,6 +196,21 @@
 				<false/>
 			</dict>
 		</array>
+		<key>C556B277-2701-45FB-9FDB-FF73B24A1888</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B78E5F60-1206-4640-A6EA-CAEFA68CBB0C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>76DC8B24-AA7F-46D1-9300-0BBFE2FFB4B9</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Sanhe Hu</string>
@@ -143,7 +238,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>keyword</key>
-				<string>zz</string>
+				<string>ars</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -419,6 +514,153 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{var:copy_arn_arg}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>5CB669B4-2234-4625-BB06-991583C28B1E</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:copy_arn}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>y</string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>76DC8B24-AA7F-46D1-9300-0BBFE2FFB4B9</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>8986A44E-C1F2-4B4C-AA08-C7F9491097A7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{var:copy_id_arg}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>FEFE6551-5E67-4B8D-AFB9-60631F4C6419</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:copy_id}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>y</string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>76DC8B24-AA7F-46D1-9300-0BBFE2FFB4B9</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>36E24633-6436-4173-BEE8-049C43484C43</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{var:copy_name_arg}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>B78E5F60-1206-4640-A6EA-CAEFA68CBB0C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:copy_name}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>y</string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>76DC8B24-AA7F-46D1-9300-0BBFE2FFB4B9</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>C556B277-2701-45FB-9FDB-FF73B24A1888</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Alfred Workflow example project based on afwf python library</string>
@@ -437,6 +679,13 @@
 			<integer>605</integer>
 			<key>ypos</key>
 			<integer>485</integer>
+		</dict>
+		<key>36E24633-6436-4173-BEE8-049C43484C43</key>
+		<dict>
+			<key>xpos</key>
+			<integer>605</integer>
+			<key>ypos</key>
+			<integer>720</integer>
 		</dict>
 		<key>3D612075-778A-4380-9A57-7F68CD611C4B</key>
 		<dict>
@@ -466,12 +715,28 @@
 			<key>ypos</key>
 			<integer>465</integer>
 		</dict>
+		<key>5CB669B4-2234-4625-BB06-991583C28B1E</key>
+		<dict>
+			<key>note</key>
+			<string>Ctrl + Enter to Copy ARN</string>
+			<key>xpos</key>
+			<integer>695</integer>
+			<key>ypos</key>
+			<integer>570</integer>
+		</dict>
 		<key>6A0C1DD6-4609-4A13-8391-DEB81586E6BE</key>
 		<dict>
 			<key>xpos</key>
 			<integer>695</integer>
 			<key>ypos</key>
 			<integer>360</integer>
+		</dict>
+		<key>8986A44E-C1F2-4B4C-AA08-C7F9491097A7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>605</integer>
+			<key>ypos</key>
+			<integer>595</integer>
 		</dict>
 		<key>8FA29A6B-5874-4EA1-860A-BBFCB29574D9</key>
 		<dict>
@@ -487,6 +752,22 @@
 			<key>ypos</key>
 			<integer>380</integer>
 		</dict>
+		<key>B78E5F60-1206-4640-A6EA-CAEFA68CBB0C</key>
+		<dict>
+			<key>note</key>
+			<string>Shift + Enter to Copy Resource Name</string>
+			<key>xpos</key>
+			<integer>695</integer>
+			<key>ypos</key>
+			<integer>845</integer>
+		</dict>
+		<key>C556B277-2701-45FB-9FDB-FF73B24A1888</key>
+		<dict>
+			<key>xpos</key>
+			<integer>605</integer>
+			<key>ypos</key>
+			<integer>870</integer>
+		</dict>
 		<key>CF6C4785-94C4-4F4E-B0DF-1A5050ABDB1B</key>
 		<dict>
 			<key>xpos</key>
@@ -500,6 +781,15 @@
 			<integer>695</integer>
 			<key>ypos</key>
 			<integer>45</integer>
+		</dict>
+		<key>FEFE6551-5E67-4B8D-AFB9-60631F4C6419</key>
+		<dict>
+			<key>note</key>
+			<string>Shift + Enter to Copy Resource Name</string>
+			<key>xpos</key>
+			<integer>695</integer>
+			<key>ypos</key>
+			<integer>700</integer>
 		</dict>
 	</dict>
 	<key>variablesdontexport</key>

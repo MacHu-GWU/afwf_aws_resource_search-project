@@ -7,24 +7,22 @@ import typing as T
 import attrs
 import afwf.api as afwf
 
-from aws_resource_search.res_lib import (
+from aws_resource_search.api import (
     preprocess_query,
-    Searcher,
+    BaseSearcher,
     DetailItem,
     InfoItem,
-    OpenUrlItem,
-    OpenFileItem,
-)
-from aws_resource_search.ui.boto_ses import bsm, ars
-from aws_resource_search.ui.search_resource_type import (
-    AwsResourceTypeItem,
-    search_resource_type_and_return_items,
-)
-from aws_resource_search.ui.search_resource import (
+    UrlItem,
+    FileItem,
+    ExceptionItem,
     AwsResourceItem,
-    search_resource_and_return_items,
+    AwsResourceTypeItem,
+    SetAwsProfileItem,
+    ShowAwsInfoItem,
+    handler as ui_handler,
+    UI,
 )
-from aws_resource_search.ui.main import terminal, UI, handler as ui_handler
+from aws_resource_search.ui_init import ui, ars
 
 from ..icons import resource_type_icon_mapper
 
@@ -41,19 +39,13 @@ def get_icon_by_key(mapper: dict, key: str) -> T.Optional[afwf.Icon]:
         return None
 
 
-ui = UI(
-    handler=ui_handler,
-    capture_error=False,
-    terminal=terminal,
-)
-
 T_ARS_ITEM = T.Union[
     AwsResourceTypeItem,
     AwsResourceItem,
     DetailItem,
     InfoItem,
-    OpenUrlItem,
-    OpenFileItem,
+    UrlItem,
+    FileItem,
 ]
 
 
@@ -98,7 +90,7 @@ class Item(afwf.Item):
             a sub-session, but sub-session in alfred is another script filter,
             which greatly increase the complexity.
         """
-        return (
+        afwf_item = (
             cls(
                 title=item.title,
                 subtitle=item.subtitle,
@@ -110,10 +102,14 @@ class Item(afwf.Item):
                 ),
             )
             .open_url(item.variables["doc"].get_console_url(ars.aws_console))
-            .copy_arn(item.get_arn())
             .copy_id(item.get_id())
             .copy_name(item.get_name())
         )
+        try:
+            afwf_item.copy_arn(item.get_arn())
+        except NotImplementedError:
+            pass
+        return afwf_item
 
     @classmethod
     def from_info_item(cls, item: InfoItem):
@@ -125,7 +121,7 @@ class Item(afwf.Item):
         )
 
     @classmethod
-    def from_open_url_item(cls, item: OpenUrlItem):
+    def from_open_url_item(cls, item: UrlItem):
         return cls(
             title=item.title,
             subtitle=item.subtitle,
@@ -134,7 +130,7 @@ class Item(afwf.Item):
         ).open_url(item.arg)
 
     @classmethod
-    def from_open_file_item(cls, item: OpenFileItem):
+    def from_open_file_item(cls, item: FileItem):
         return cls(
             title=item.title,
             subtitle=item.subtitle,
@@ -159,9 +155,9 @@ class Item(afwf.Item):
             return cls.from_aws_resource_item(item)
         elif isinstance(item, InfoItem):
             return cls.from_info_item(item)
-        elif isinstance(item, OpenUrlItem):
+        elif isinstance(item, UrlItem):
             return cls.from_open_url_item(item)
-        elif isinstance(item, OpenFileItem):
+        elif isinstance(item, FileItem):
             return cls.from_open_file_item(item)
         elif isinstance(item, DetailItem):
             return cls.from_detail_item(item)

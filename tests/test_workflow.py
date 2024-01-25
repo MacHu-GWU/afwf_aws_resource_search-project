@@ -2,20 +2,13 @@
 
 from afwf_aws_resource_search.workflow import wf
 from afwf_aws_resource_search.handlers import (
-    error,
-    memorize_cache,
-    open_file,
-    open_url,
-    read_file,
-    set_settings,
-    view_settings,
-    write_file,
+    search,
 )
 from rich import print as rprint
 
 
 def test():
-    sf = wf._run(arg=f"{memorize_cache.handler.id} my_key")
+    sf = wf._run(arg=f"{search.handler.id} s3")
 
 
 if __name__ == "__main__":
