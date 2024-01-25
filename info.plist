@@ -215,7 +215,7 @@
 	<key>createdby</key>
 	<string>Sanhe Hu</string>
 	<key>description</key>
-	<string>AWS Resource Search</string>
+	<string>Alfred Workflow that search AWS Resources and Open it in AWS Console.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -250,7 +250,7 @@
 				<key>runningsubtext</key>
 				<string>please wait ...</string>
 				<key>script</key>
-				<string>/Users/sanhehu/.pyenv/shims/python3.8 main.py 'search {query}'</string>
+				<string>~/.pyenv/shims/python3.8 main.py 'search {query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>

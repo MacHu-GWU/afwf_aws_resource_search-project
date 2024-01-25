@@ -15,5 +15,9 @@ Backlog
 **Miscellaneous**
 
 
-0.1.1 (2024-01-01)
+0.1.1 (2024-01-24)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Features and Improvements**
+
+- First usable version.
+- Integrate with `aws_resource_search <https://github.com/MacHu-GWU/aws_resource_search-project>`_
