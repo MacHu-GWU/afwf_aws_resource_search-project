@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "afwf_aws_resource_search"
-version = "0.1.1"
+version = "0.1.2"
 description = "Search AWS Resources"
 authors = ["Sanhe Hu <husanhe@gmail.com>"]
 

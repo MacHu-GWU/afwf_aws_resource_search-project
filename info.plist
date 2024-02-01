@@ -663,7 +663,9 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Alfred Workflow example project based on afwf python library</string>
+	<string>🌟 Alfred Workflow that search AWS Resources and Open it in AWS Console.
+
+This project is based on `aws_resource_search &lt;https://github.com/MacHu-GWU/aws_resource_search-project&gt;`_, A terminal application that enables interactive searches for AWS resources. It is a mini AWS console in your terminal or shell environment. This project is just a wrapper to integrate ``aws_resource_search`` with Alfred Workflow.</string>
 	<key>uidata</key>
 	<dict>
 		<key>2FE6CFA4-74F5-41A7-A2CA-43A4D999A92D</key>
@@ -795,7 +797,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.2.1</string>
+	<string>0.1.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/MacHu-GWU/afwf_aws_resource_search-project</string>
 </dict>
